@@ -14,11 +14,13 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webextension-polyfill": "^0.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "INLINE_RUNTIME_CHUNK=false react-app-rewired build",
+    "watch": "webpack -w --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,5 +41,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/webextension-polyfill": "^0.10.7",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2"
   }
 }
